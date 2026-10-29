@@ -1,0 +1,439 @@
+/* ============================================================
+   TUNTAS — Navbar Styles
+   ============================================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sticky);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal),
+    background var(--transition-normal);
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+/* ── Logo ──────────────────────────────────────────────── */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoMark {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-primary-800));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--font-display);
+  font-weight: var(--font-black);
+  font-size: var(--text-lg);
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-weight: var(--font-black);
+  font-size: var(--text-xl);
+  color: var(--color-neutral-900);
+  letter-spacing: -0.04em;
+}
+
+/* ── Mode Switch ───────────────────────────────────────── */
+.modeSwitch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--color-neutral-100);
+  border-radius: var(--radius-lg);
+  padding: 3px;
+  border: 1px solid var(--color-border);
+}
+
+.modeBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-muted);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.modeBtn:hover {
+  color: var(--color-text-primary);
+}
+
+.modeActive {
+  background: white;
+  color: var(--color-primary-600) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Nav Links ─────────────────────────────────────────── */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.navLink {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: var(--color-text-primary);
+  background: var(--color-neutral-100);
+}
+
+.navLinkActive {
+  color: var(--color-primary-600) !important;
+  background: var(--color-primary-50) !important;
+}
+
+.navLinkHighlight {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary-600);
+  background: var(--color-primary-50);
+  transition: background var(--transition-fast);
+  text-decoration: none;
+}
+
+.navLinkHighlight:hover {
+  background: var(--color-primary-100);
+}
+
+/* ── Actions ───────────────────────────────────────────── */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-lg);
+  color: var(--color-text-secondary);
+  transition: background var(--transition-fast), color var(--transition-fast);
+  text-decoration: none;
+}
+
+.iconBtn:hover {
+  background: var(--color-neutral-100);
+  color: var(--color-text-primary);
+}
+
+.iconBtnBadge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-lg);
+  color: var(--color-text-secondary);
+  transition: background var(--transition-fast), color var(--transition-fast);
+  text-decoration: none;
+}
+
+.iconBtnBadge:hover {
+  background: var(--color-neutral-100);
+  color: var(--color-text-primary);
+}
+
+.notifBadge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 16px;
+  height: 16px;
+  background: var(--color-danger-500);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: var(--font-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  border: 1.5px solid white;
+}
+
+.loginLink {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  text-decoration: none;
+}
+
+.loginLink:hover {
+  color: var(--color-text-primary);
+  background: var(--color-neutral-100);
+}
+
+/* ── Profile Dropdown ──────────────────────────────────── */
+.profileMenu {
+  position: relative;
+}
+
+.profileBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-lg);
+  transition: background var(--transition-fast);
+}
+
+.profileBtn:hover {
+  background: var(--color-neutral-100);
+}
+
+.chevron {
+  color: var(--color-text-muted);
+}
+
+.dropdownOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-dropdown);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 220px;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  z-index: calc(var(--z-dropdown) + 1);
+  overflow: hidden;
+  animation: scaleIn 0.15s ease both;
+  transform-origin: top right;
+}
+
+.dropdownHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+.dropdownName {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.dropdownEmail {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border-light);
+  margin: var(--space-1) 0;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-medium);
+  transition: background var(--transition-fast), color var(--transition-fast);
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+}
+
+.dropdownItem:hover {
+  background: var(--color-neutral-50);
+  color: var(--color-text-primary);
+}
+
+.dropdownDanger {
+  color: var(--color-danger-600);
+}
+
+.dropdownDanger:hover {
+  background: var(--color-danger-50);
+  color: var(--color-danger-700);
+}
+
+/* ── Hamburger ─────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  transition: background var(--transition-fast);
+}
+
+.hamburger:hover {
+  background: var(--color-neutral-100);
+}
+
+/* ── Mobile Menu ───────────────────────────────────────── */
+.mobileMenu {
+  background: white;
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-4) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  animation: slideInUp 0.2s ease both;
+}
+
+.mobileModeSwitch {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.mobileModeSwitch .modeBtn {
+  flex: 1;
+  justify-content: center;
+  padding: var(--space-3);
+  background: var(--color-neutral-100);
+  border-radius: var(--radius-lg);
+}
+
+.mobileModeSwitch .modeActive {
+  background: var(--color-primary-600);
+  color: white !important;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.mobileNavLink:hover {
+  background: var(--color-neutral-100);
+  color: var(--color-text-primary);
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.mobileLogout {
+  width: 100%;
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-danger-600);
+  background: var(--color-danger-50);
+  text-align: center;
+  transition: background var(--transition-fast);
+}
+
+.mobileLogout:hover {
+  background: var(--color-danger-100);
+}
+
+/* ── Spacer ────────────────────────────────────────────── */
+.navSpacer {
+  height: 64px;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .navLinks { display: none; }
+  .hamburger { display: flex; }
+  .loginLink { display: none; }
+  .registerBtn { display: none; }
+  .modeSwitch { display: none; }
+
+  .inner {
+    padding: 0 var(--space-4);
+    gap: var(--space-3);
+  }
+}
+
+@media (max-width: 900px) {
+  .navLinks {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
